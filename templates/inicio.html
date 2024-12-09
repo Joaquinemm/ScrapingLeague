@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>UEFA</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><img src="../static/images/uefa-com-vector-logo.svg" alt="" class="logo-img"></li>
+            <li><a href="/" id="nav_position">Inicio</a></li>
+            <li><a href="/tablaChampions">Tabla</a></li>
+        </ul>
+        <h1>ULTIMA JORNADA</h1>
+    </nav>
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="../static/images/imagen1.jpeg" alt="Imagen 1">
+            <img src="../static/images/imagen2.jpg" alt="Imagen 2">
+            <img src="../static/images/imagen3.jpg" alt="Imagen 3">
+        </div>
+        <div class="carousel-buttons">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <div class="carousel-indicators">
+            <button onclick="currentSlide(0)" class="active"></button>
+            <button onclick="currentSlide(1)"></button>
+            <button onclick="currentSlide(2)"></button>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.querySelectorAll('.carousel-images img');
+            let dots = document.querySelectorAll('.carousel-indicators button');
+
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(' active', '');
+            }
+
+            slides[slideIndex].style.display = 'block';
+            dots[slideIndex].className += ' active';
+        }
+
+        // Optional: Automatic slide show
+        setInterval(function() { moveSlide(1) }, 5000); // Change image every 5 seconds
+    </script>
+</body>
+</html>

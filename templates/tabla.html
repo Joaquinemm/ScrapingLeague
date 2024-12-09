@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CHAMPIONS LEAGUE</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><img src="../static/images/uefa-com-vector-logo.svg" alt="" class="logo-img"></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="" id="nav_position">Tabla</a></li>
+        </ul>
+    </nav>
+    <img src="../static/images/champions-logo.png" alt="" id="champions-logo">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="th">#</th>
+                <th class="th">Equipo</th>
+                <th class="th">Puntos</th>
+                <th class="th">PJ</th>
+                <th class="th">PG</th>
+                <th class="th">PE</th>
+                <th class="th">PP</th>
+                <th class="th">GF</th>
+                <th class="th">GC</th>
+                <th class="th">Dif</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-cuerpo">
+            <!-- Las filas se insertarán aquí mediante javascript -->
+        </tbody>
+    </table>
+    <p>Fuente: <a id="promiedos-link" target="_blank" href="https://www.promiedos.com.ar/championsleague">Promiedos.com.ar</a></p>
+
+    <script>
+        // Función para cargar los datos desde el archivo JSON
+        fetch('data/data.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const tbody = document.getElementById('tabla-cuerpo');
+                const { posiciones, equipos, puntos, pjs, pgs, pes, pps, gfs, gcs, difs } = data;
+
+                // Recorrer las listas y agregar las filas a la tabla
+                for (let i = 0; i < posiciones.length; i++) {
+                    const row = tbody.insertRow();
+                    row.insertCell().textContent = posiciones[i];
+                    row.insertCell().textContent = equipos[i];
+                    row.insertCell().textContent = puntos[i];
+                    row.insertCell().textContent = pjs[i];
+                    row.insertCell().textContent = pgs[i];
+                    row.insertCell().textContent = pes[i];
+                    row.insertCell().textContent = pps[i];
+                    row.insertCell().textContent = gfs[i];
+                    row.insertCell().textContent = gcs[i];
+                    row.insertCell().textContent = difs[i];
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar los datos:', error);
+            });
+    </script>
+</body>
+</html>

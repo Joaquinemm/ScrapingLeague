@@ -1,0 +1,164 @@
+body{
+    background: linear-gradient(to bottom, #002FF5, #000157); 
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Manrope", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0;
+}
+
+h1{
+    color: #f2f2f2;
+    font-size: 40px;
+}
+
+*{
+    font-family: "Manrope", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+.table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px
+    rgba(0,0,0,0.1);
+    margin-left: 20%;
+    border-radius: 10px;
+}
+.th, td {
+    border: 1px solid rgb(255, 255, 255);
+    padding: 8px;
+    text-align: left;
+    background-color: #0000002d;
+}
+.th {
+    background-color: #f2f2f2;
+}
+td{
+    color: #f2f2f2;
+}
+
+#champions-logo{
+    width: 200px;
+    height: auto;
+    margin-top: 3%;
+    margin-bottom:5%;
+}
+
+#promiedos-link{
+    color: #f2f2f2a1;
+}
+
+.navbar ul{
+    list-style-type: none;
+    background-color: rgb(255, 255, 255);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.137) ;
+}
+
+.navbar a{
+    font-size: medium;
+    color: #0400FF;
+    text-decoration: none;
+    padding: 31px;
+    padding-bottom: 53px;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover{
+    background-color: rgba(0, 0, 0, 0.137);
+}
+
+.navbar li{
+    font-family: "Manrope", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    float: left;
+}
+
+.logo-img{
+    filter: invert(11%) sepia(77%) saturate(6148%) hue-rotate(246deg) brightness(102%) contrast(151%);
+    width: 100px;
+    text-align: center;
+    font-size:small;
+    padding-left: 100px;
+    padding-right: 60px;
+}
+
+
+
+#nav_position{
+    border-bottom: 2px solid #0400FF;
+    padding-bottom: 49.8px ;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-buttons button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel-indicators {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.carousel-indicators button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 5px;
+    margin: 0 2px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel-indicators button.active {
+    background-color: white;
+}
